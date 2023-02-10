@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Range Slider Price Calculator</title>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+    // Initialize a new plugin instance for all
+    // e.g. $('input[type="range"]') elements.
+    $('input[type="range"]').rangeslider();
+
+    // Destroy all plugin instances created from the
+    // e.g. $('input[type="range"]') elements.
+    $('input[type="range"]').rangeslider('destroy');
+
+    // Update all rangeslider instances for all
+    // e.g. $('input[type="range"]') elements.
+    // Usefull if you changed some attributes e.g. `min` or `max` etc.
+    $('input[type="range"]').rangeslider('update', true);
+</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section id="price-calculator">
+  <h2>Price Calculator</h2>
+  <form>
+    <!-- Choose number seats-->
+    <fieldset>
+      <div class="range-slider">
+        <h3>How many seats do you need?</h3>
+        <hr/>
+        <input name="range--seats" id="range--seats" class="range-slider__range" type="range" value="0" min="0" max="10">
+        <!--<span class="range-slider__value">0</span>-->
+        <!--<span class="rangeslider__tooltip" id ="range-tooltip"></span>-->
+        <!--<div for="range--seats" class="output--seats"></div>-->
+      </div>
+    </fieldset>
+
+    <!-- Add Ultra Performance -->
+    <fieldset id="ultra">
+      <h3>Would you like to add Ultra Performance to each seat?</h3>
+      <input id="rdb1" type="radio" name="toggler--ultra" value="1250" /><label for="rdb1">Subscription</label>
+      <input id="rdb2" type="radio" name="toggler--ultra" value="5000" /><label for="rdb2">Buy once</label>
+      <input id="rdb3" type="radio" name="toggler--ultra" value="0" /><label for="rdb3">No thanks</label>
+    </fieldset>
+    <!-- Total Cost -->
+    <div id="totals">
+      <fieldset id="total-cost">
+        <h3>Your Cost Today</h3>
+        <div for="toggler--ultra" class="output output--lisence-cost strikethrough" data-total-cost="0"></div>
+      </fieldset>
+      <fieldset id="discount-cost">
+        <h3>Exclusive February only 30% off price</h3>
+        <div for="toggler--discount" class="output output--discount" data-discount-cost="0"></div>
+      </fieldset>
+      <!-- Annual Ultra Performance subscription Cost -->
+      <fieldset id="annual-sub-cost">
+        <h3>Annual Subscription Cost</h3>
+        <p>Your Cost Today includes the first 12 months of the subscription.</p>
+        <div for="toggler--annual-sub" class="output output--annual-sub"></div>
+      </fieldset>
+    </div>
+    <small>Pricing is only indicative, <a href="/contact">contact us</a> for a formal quotation or if you have questions about combinations not covered in the calculator.</small>
+  </form>
+</section>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
