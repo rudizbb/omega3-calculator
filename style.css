@@ -34,8 +34,21 @@ body{
 .btn-next{}
 
 .btn-back{
-	margin-top: 20px;
 	display: block;
+}
+
+/* Table */
+table [data-hidden] {
+    display: none;
+}
+table tr td:last-of-type {
+    /* background-color: white */
+    /* border-color: white */
+    margin-left: 25px;
+}
+
+.row.roomy {
+    margin: 10px auto 25px;
 }
 
 /* Animations Settings */

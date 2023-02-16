@@ -3,70 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <title>Omega-3 Intake Calculator - Multi Steps Form</title>
-
-
-  <link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
   <link rel="stylesheet" href="./style.css">
-  <script  src="./script.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
-
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.5/js/bootstrap-select.min.js"></script>
-
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.5/js/i18n/defaults-*.min.js"></script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3">
       <!-- Offset -->
-      <div class="form-step-wrap" id="myModal">
-          <div id="step1box" class="slider-step first-step step" data-next-step="step-mortgage-balance">
-            <h3>Calculate Omega-3 Intake From Diet</h3>
+        <div class="form-step-wrap" id="myModal">
+          <div id="step-person-data" class="slider-step first-step step" data-next-step="step-foods">
+            <h3>Calculate Daily Omega-3 Intake From Your Diet</h3>
             <div class="row tall">
               <div class="col-xs-12 form-questions">
-
                 <div class="row">
                   <div class="col-xs-12">
                     </br>
                     <label>Do you include <strong>animal-based</strong> foods in your diet?</label>
-                    <select id="animalfoods" name="animalfoods" tabindex="1" class="form-control">
-                      <option selected>Yes</option>
-                      <option>No</option>
-                    </select>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="animalBasedRadio" id="animalBasedRadio1" checked>
+                      <label class="form-check-label" for="animalBasedRadio1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="animalBasedRadio" id="animalBasedRadio2">
+                      <label class="form-check-label" for="animalBasedRadio2">
+                        No
+                      </label>
+                    </div>
                   </div>
                   <div class="col-xs-12">
                     </br>
                     <label>Do you take any <strong>omega-3 supplements?</strong></label>
-                    <select id="supplements" name="supplements" tabindex="1" class="form-control">
-                      <option selected>Yes</option>
-                      <option>No</option>
-                    </select>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="omegaSupplementRadio" id="omegaSupplementRadio1">
+                      <label class="form-check-label" for="omegaSupplementRadio1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="omegaSupplementRadio" id="omegaSupplementRadio2" checked>
+                      <label class="form-check-label" for="omegaSupplementRadio2">
+                        No
+                      </label>
+                    </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-xs-12">
                     </br>
-                    <label class="pad-top">Age Group</label>
-                    <select name="state" tabindex="1" class="form-control">
-                      <option value="" selected>Choose Age Group...</option>
-                      <option value="AL">Birth to 6 months</option>
-                      <option value="AK">7–12 months</option>
-                      <option value="AZ">1-3 years</option>
-                      <option value="AR">4-8 years</option>
-                      <option value="CA">9-13 years</option>
-                      <option value="CO">14-18 years</option>
-                      <option value="CT">19-50 years</option>
-                      <option value="DE">51+ years</option>
+                    <label class="pad-top">Age group</label>
+                    <select name="state" size="8" tabindex="1" class="form-control">
+                      <option value="0-6mo">Birth to 6 months</option>
+                      <option value="7-12mo">7–12 months</option>
+                      <option value="1-3yr">1-3 years</option>
+                      <option value="4-8yr">4-8 years</option>
+                      <option value="9-13yr">9-13 years</option>
+                      <option value="14-18yr">14-18 years</option>
+                      <option value="19-50yr" selected>19-50 years</option>
+                      <option value="51yr">51+ years</option>
                     </select>
                   </div>
                 </div>
@@ -75,50 +81,101 @@
                   <div class="col-xs-12">
                     </br>
                     <label class="pad-top">Gender</label>
-                    <select name="state" tabindex="1" class="form-control">
-                      <option value="" selected>Choose Gender...</option>
-                      <option value="male">Male</option>
+                    <select size="2" name="state" tabindex="1" class="form-control">
+                      <option value="male" selected>Male</option>
                       <option value="female">Female</option>
                     </select>
                   </div>
                 </div>
-
               </div>
+
               <div class="row">
                 <div class="col-xs-12">
                   </br>
-                  <input type='button' value='Continue' tabindex="1" class="btn-success form-control btn-next" />
+                  <input type='button' value='Continue' tabindex="1" class="btn btn-success btn-next" />
                 </div>
               </div>
+
             </div>
 
             <!-- /Row -->
 
           </div>
           <!-- Upper Text -->
-          <div id="step-mortgage-balance" class="slider-step step" data-next-step="step-home-value" data-back-to="step1box">
+          <div id="step-foods" class="slider-step step" data-next-step="step-home-value" data-back-to="step-person-data">
 
             <div class="row">
               <div class="col-xs-12">
-
-                    <label class="pad-top">Select foods</label>
-                    <select name="food" class="form-control selectpicker" data-live-search="true" title="Search..." >
-                      <option>Anchovy</option>
-                      <option>Cod</option>
-                      <option>Salmon</option>
-                    </select>
-                  </div>
-                </div>
-
-            <div class="row">
-              <div class="col-xs-12">
-                <input type='button' value='Continue' tabindex="5" class="btn-success form-control btn-next" />
+                <label class="pad-top">Select foods</label>
+                <select name="food-select" class="form-control selectpicker" data-live-search="true" title="Search..." >
+                  <option>Anchovy</option>
+                  <option>Cod</option>
+                  <option>Salmon</option>
+                </select>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <a class="btn-back">back</a>
+
+            <table class="table table-hover table-striped">
+              <tr>
+                <th>Food</th>
+                <th>Column2</th>
+                <th>Column3</th>
+                <th>Column4</th>
+                <th></th>
+              </tr>
+              <tr data-hidden="true"></tr>
+              <tr data-input="true"></tr>
+            </table>
+
+            <div class="row roomy">
+              <div class="col-md-5"></div>
+              <button class="col-md-2 btn btn-primary btn-lg" data-save="true">Save</button>
+              <div class="col-md-5"></div>
+            </div>
+            <div class="row roomy">
+              <div class="col-md-4"></div>
+              <button class="col-md-4 btn btn-danger btn-lg" data-json="true">Remove</button>
+              <div class="col-md-4"></div>
+            </div>
+
+            <template id="valrow">
+              <td>null</td>
+              <td>null</td>
+              <td>null</td>
+              <td>null</td>
+              <td>null</td>
+            </template>
+            <template id="inputrow">
+              <td class="ce">
+                <select name="food-select" class="form-control selectpicker" data-live-search="true" title="Search..." >
+                  <option>Anchovy</option>
+                  <option>Cod</option>
+                  <option>Salmon</option>
+                </select>
+              </td>
+              <td class="ce"><span class="placeholder">text</span></td>
+              <td class="ce"><span class="placeholder">text</span></td>
+              <td class="ce"><span class="placeholder">text</span></td>
+              <td class="ce">
+                <button class="col-md-2 btn btn-primary btn-lg" data-save="true">
+                  Save
+                </button>
+              </td>
+            </template>
+
+            </br>
+            <div class="row row-cols-auto">
+              <div class="col">
+                <input type='button' value='Back' tabindex="1" class="btn btn-secondary btn-back" />
               </div>
+
+              <div class="col">
+                <input type='button' value='Continue' tabindex="2" class="btn btn-success btn-next" />
+              </div>
+            </div>
+
+            <div class="row">
+
             </div>
 
           </div>
@@ -213,14 +270,15 @@
             </div>
           </div>
         </div>
-
-        <div class="clear"></div>
-      </div>
+          <div class="clear"></div>
+        </div>
       <!-- Offset -->
+      </div>
     </div>
-  </div>
   <!-- Container Row -->
 <!-- partial -->
-</div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script  src="./script.js"></script>
 </body>
 </html>
