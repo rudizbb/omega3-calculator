@@ -2,74 +2,225 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - CSS Range Slider Price Calculator</title>
-  
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omega-3 Intake Calculator - Multi Steps Form</title>
 
-<script>
-    // Initialize a new plugin instance for all
-    // e.g. $('input[type="range"]') elements.
-    $('input[type="range"]').rangeslider();
 
-    // Destroy all plugin instances created from the
-    // e.g. $('input[type="range"]') elements.
-    $('input[type="range"]').rangeslider('destroy');
+  <link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    // Update all rangeslider instances for all
-    // e.g. $('input[type="range"]') elements.
-    // Usefull if you changed some attributes e.g. `min` or `max` etc.
-    $('input[type="range"]').rangeslider('update', true);
-</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.css'><link rel="stylesheet" href="./style.css">
 
+  <link rel="stylesheet" href="./style.css">
+  <script  src="./script.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.5/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.5/js/i18n/defaults-*.min.js"></script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<section id="price-calculator">
-  <h2>Price Calculator</h2>
-  <form>
-    <!-- Choose number seats-->
-    <fieldset>
-      <div class="range-slider">
-        <h3>How many seats do you need?</h3>
-        <hr/>
-        <input name="range--seats" id="range--seats" class="range-slider__range" type="range" value="0" min="0" max="10">
-        <!--<span class="range-slider__value">0</span>-->
-        <!--<span class="rangeslider__tooltip" id ="range-tooltip"></span>-->
-        <!--<div for="range--seats" class="output--seats"></div>-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-4 col-lg-6 col-lg-offset-3">
+      <!-- Offset -->
+      <div class="form-step-wrap" id="myModal">
+          <div id="step1box" class="slider-step first-step step" data-next-step="step-mortgage-balance">
+            <h3>Calculate Omega-3 Intake From Diet</h3>
+            <div class="row tall">
+              <div class="col-xs-12 form-questions">
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    </br>
+                    <label>Do you include <strong>animal-based</strong> foods in your diet?</label>
+                    <select id="animalfoods" name="animalfoods" tabindex="1" class="form-control">
+                      <option selected>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-12">
+                    </br>
+                    <label>Do you take any <strong>omega-3 supplements?</strong></label>
+                    <select id="supplements" name="supplements" tabindex="1" class="form-control">
+                      <option selected>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    </br>
+                    <label class="pad-top">Age Group</label>
+                    <select name="state" tabindex="1" class="form-control">
+                      <option value="" selected>Choose Age Group...</option>
+                      <option value="AL">Birth to 6 months</option>
+                      <option value="AK">7–12 months</option>
+                      <option value="AZ">1-3 years</option>
+                      <option value="AR">4-8 years</option>
+                      <option value="CA">9-13 years</option>
+                      <option value="CO">14-18 years</option>
+                      <option value="CT">19-50 years</option>
+                      <option value="DE">51+ years</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    </br>
+                    <label class="pad-top">Gender</label>
+                    <select name="state" tabindex="1" class="form-control">
+                      <option value="" selected>Choose Gender...</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  </br>
+                  <input type='button' value='Continue' tabindex="1" class="btn-success form-control btn-next" />
+                </div>
+              </div>
+            </div>
+
+            <!-- /Row -->
+
+          </div>
+          <!-- Upper Text -->
+          <div id="step-mortgage-balance" class="slider-step step" data-next-step="step-home-value" data-back-to="step1box">
+
+            <div class="row">
+              <div class="col-xs-12">
+
+                    <label class="pad-top">Select foods</label>
+                    <select name="food" class="form-control selectpicker" data-live-search="true" title="Search..." >
+                      <option>Anchovy</option>
+                      <option>Cod</option>
+                      <option>Salmon</option>
+                    </select>
+                  </div>
+                </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <input type='button' value='Continue' tabindex="5" class="btn-success form-control btn-next" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <a class="btn-back">back</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mortgage Balance -->
+          <div id="step-home-value" class="slider-step step" data-next-step="step-interest-rate" data-back-to="step-mortgage-balance">
+            <!-- Home Value -->
+            <div class="row">
+              <div class="col-xs-12  ">
+                <label>Property Value</label>
+                <p id="propertyvalue-error" class="input-error">Please Select Property Value</p>
+                <select name="propertyvalue" class="form-control" tabindex="6">
+                  <option value="">Estimate Value...</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input id="next-home-value" type='button' value='Continue' tabindex="7" class="btn-success form-control btn-next" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <a id="back-home-value" class="btn-back">back</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Home Value -->
+          <div id="step-interest-rate" class="slider-step step" data-next-step="step-home-buy-process" data-back-to="step-home-value">
+            <!-- Interest Rate -->
+            <div class="row">
+              <div class="col-xs-12  ">
+                <label>Current Interest Rate</label>
+                <p id="mortgagerate-error" class="input-error">Please Select Interest Rate</p>
+                <select name="mortgagerate" class="form-control" tabindex="8">
+                  <option value="3"   >Under 3.5%</option>
+                  <option value="3.5" >3.50% - 3.74%</option>
+                  <option value="3.75">3.75% - 3.99%</option>
+                  <option value="4"   >4.00% - 4.24%</option>
+                  <option value="4.25">4.25% - 4.49%</option>
+                  <option value="4.5" >4.50% - 4.74%</option>
+                  <option value="4.75">4.75% - 4.99%</option>
+                  <option value="5"   selected='selected'>5.00% - 5.24%</option>
+                  <option value="5.25">5.25% - 5.49%</option>
+                  <option value="5.5" >5.50% - 5.74%</option>
+                  <option value="5.75">5.75% - 5.99%</option>
+                  <option value="6"   >6.00% - 6.49%</option>
+                  <option value="6.5" >6.50% - 6.99%</option>
+                  <option value="7"   >7.00% - 7.50%</option>
+                  <option value="8"   >Over 7.5%</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input id="next-interest-rate" type='button' value='Continue' tabindex="9" class="btn-success form-control btn-next" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <a id="back-interest-rate" class="btn-back">back</a>
+              </div>
+            </div>
+          </div>
+          <!-- /Interest Rate -->
+          <div id="step-home-buy-process" class="slider-step step">
+          <!-- Home Buy Process -->
+          <div class="row">
+            <div class="col-xs-12 ">
+              <label class="purchase">Describe your home buying progress.</label>
+              <p id="mortgagegoal-error" class="input-error">Please Select Home Buying Progress</p>
+              <select name="mortgagegoal" class="form-control purchase" tabindex="10">
+                <option value="">---Select---</option>
+                <option value="signed_pa">I have a signed purchase agreement</option>
+                <option value="offer_pending">I am in the process of making an offer on a home</option>
+                <option value="buying_soon">I want to buy a home in the next few months</option>
+                <option value="preapproval_letter">I need a pre-approval letter</option>
+                <option value="researching">I want to buy a home 6 or more months from now</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input id="next-home-buy-process" type='button' value='Continue' tabindex="11" class="btn-success form-control btn-next" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <a id="back-home-buy-process" class="btn-back">back</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
       </div>
-    </fieldset>
-
-    <!-- Add Ultra Performance -->
-    <fieldset id="ultra">
-      <h3>Would you like to add Ultra Performance to each seat?</h3>
-      <input id="rdb1" type="radio" name="toggler--ultra" value="1250" /><label for="rdb1">Subscription</label>
-      <input id="rdb2" type="radio" name="toggler--ultra" value="5000" /><label for="rdb2">Buy once</label>
-      <input id="rdb3" type="radio" name="toggler--ultra" value="0" /><label for="rdb3">No thanks</label>
-    </fieldset>
-    <!-- Total Cost -->
-    <div id="totals">
-      <fieldset id="total-cost">
-        <h3>Your Cost Today</h3>
-        <div for="toggler--ultra" class="output output--lisence-cost strikethrough" data-total-cost="0"></div>
-      </fieldset>
-      <fieldset id="discount-cost">
-        <h3>Exclusive February only 30% off price</h3>
-        <div for="toggler--discount" class="output output--discount" data-discount-cost="0"></div>
-      </fieldset>
-      <!-- Annual Ultra Performance subscription Cost -->
-      <fieldset id="annual-sub-cost">
-        <h3>Annual Subscription Cost</h3>
-        <p>Your Cost Today includes the first 12 months of the subscription.</p>
-        <div for="toggler--annual-sub" class="output output--annual-sub"></div>
-      </fieldset>
+      <!-- Offset -->
     </div>
-    <small>Pricing is only indicative, <a href="/contact">contact us</a> for a formal quotation or if you have questions about combinations not covered in the calculator.</small>
-  </form>
-</section>
+  </div>
+  <!-- Container Row -->
 <!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.min.js'></script><script  src="./script.js"></script>
-
+</div>
 </body>
 </html>
